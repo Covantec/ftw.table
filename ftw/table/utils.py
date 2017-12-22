@@ -6,6 +6,7 @@ from zope.i18n import translate
 from ftw.table.column import METADATA, FIELD, COLUMN
 from copy import deepcopy
 import Missing
+import pkg_resources
 
 try:
     import json
@@ -17,6 +18,9 @@ try:
 except ImportError:
     # plone 4.0 support
     from zope.app.component import hooks
+
+
+IS_PLONE_5 = pkg_resources.get_distribution('Products.CMFPlone').version >= '5'
 
 
 class TableGenerator(object):
