@@ -21,7 +21,7 @@ class TestCatalogSource(TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         login(self.portal, TEST_USER_NAME)
 
-        self.folder = create(Builder('folder').titled('Hanspeter'))
+        self.folder = create(Builder('folder').titled(u'Hanspeter'))
         self.config = DefaultCatalogTableSourceConfig()
         self.config.request = self.portal.REQUEST
         self.source = getMultiAdapter((self.config, self.portal.REQUEST),
